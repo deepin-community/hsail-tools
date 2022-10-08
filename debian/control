@@ -1,0 +1,21 @@
+Source: hsail-tools
+Section: devel
+Priority: optional
+Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>
+Uploaders: Matthias Klose <doko@debian.org>
+Build-Depends: debhelper (>= 9),
+  cmake,
+  libdwarf-dev,
+  libelf-dev,
+  libncursesw5-dev,
+  re2c,
+Standards-Version: 4.4.1
+Homepage: http://www.hsafoundation.com/hsa-developer-tools/
+
+Package: hsail-tools
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: tools for parsing, assembling, and disassembling HSAIL
+ HSAIL-Tools are used for parsing, assembling, and disassembling HSAIL.
+ .
+ This version of libHSAIL supports the HSA PRM 1.02 (Final) specification.

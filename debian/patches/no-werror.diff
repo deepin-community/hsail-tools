@@ -1,0 +1,13 @@
+Index: b/CMakeLists.txt
+===================================================================
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -10,7 +10,7 @@ if(MSVC)
+ endif()
+ 
+ if(UNIX)
+-  add_compile_options(-fpic -Wall -Werror -std=c++11 -pthread -fno-rtti -fvisibility-inlines-hidden)
++  add_compile_options(-fpic -Wall -std=c++11 -pthread -fno-rtti -fvisibility-inlines-hidden)
+   add_definitions(-D__STDC_LIMIT_MACROS)
+   add_definitions(-D__STDC_CONSTANT_MACROS)
+   add_definitions(-D__STDC_FORMAT_MACROS)

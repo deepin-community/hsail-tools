@@ -1,0 +1,20 @@
+Index: hsail-tools-0~20170314/HSAILAsm/CMakeLists.txt
+===================================================================
+--- hsail-tools-0~20170314.orig/HSAILAsm/CMakeLists.txt	2017-03-06 16:05:12.000000000 +0000
++++ hsail-tools-0~20170314/HSAILAsm/CMakeLists.txt	2017-10-02 15:53:53.768228620 +0000
+@@ -49,6 +49,8 @@
+          COMMAND ${HSAILASM} -decode test.brig -o test.yaml
+          WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+ 
++set_tests_properties(HSAILAsm-disassemble HSAILAsm-decode PROPERTIES DEPENDS HSAILAsm-assemble)
++
+ if(BUILD_LIBBRIGDWARF)
+ add_test(NAME HSAILAsm-assemble-g
+          COMMAND ${HSAILASM} -assemble -g ${test} -o test-g.brig
+@@ -66,4 +68,6 @@
+          COMMAND ${HSAILASM} -assemble -g -include-source ${test} -o test-g.brig
+          WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+ 
++set_tests_properties(HSAILAsm-disassemble-g PROPERTIES DEPENDS HSAILAsm-assemble-g)
++
+ endif()

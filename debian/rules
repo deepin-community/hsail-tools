@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --parallel
+
+
+override_dh_auto_configure:
+ifeq ($(DEB_HOST_ARCH_ENDIAN),big)
+	@echo "package can be built for big-endian only"
+	false
+endif
+	dh_auto_configure
+
+override_dh_install:
+	dh_install
+	rm -rf debian/hsail-tools/usr/include
+	rm -rf debian/hsail-tools/usr/lib
+	if which help2man >/dev/null 2>&1; then \
+	  help2man -N --name HSAILasm --help-option=-help --version-option=-version \
+	    debian/hsail-tools/usr/bin/HSAILasm > debian/HSAILasm.1; \
+	fi
+	mkdir -p debian/hsail-tools/usr/share/man/man1
+	cp debian/HSAILasm.1 debian/hsail-tools/usr/share/man/man1/.

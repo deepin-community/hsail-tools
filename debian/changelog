@@ -1,0 +1,28 @@
+hsail-tools (0~20180830-1) unstable; urgency=medium
+
+  * New upstream version
+  * Bump standards version.
+  * Stop building on big-endian systems, package is not ready.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 09 Jan 2020 21:14:26 +0100
+
+hsail-tools (0~20170314-3) unstable; urgency=medium
+
+  * Add some test dependencies (Frédéric Bonna). Closes: #877606.
+  * Bump standards version.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 03 Oct 2017 16:09:29 +0200
+
+hsail-tools (0~20170314-2) unstable; urgency=medium
+
+  * debian/copyright: Add license field for files with a different
+    copyright holder.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 16 Mar 2017 12:03:57 +0100
+
+hsail-tools (0~20170314-1) unstable; urgency=medium
+
+  * Initial release. Closes: #857721.
+  * Don't ship the HSA-PRM-1.02.pdf in the source package.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 14 Mar 2017 11:39:45 +0100
